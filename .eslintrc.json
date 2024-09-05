@@ -1,0 +1,179 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals"
+  ],
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaVersion": 2020
+      }
+    }
+  ],
+  "rules": {
+    "array-callback-return": 2,
+    "curly": 2,
+    "dot-location": [2, "property"],
+    "dot-notation": 2,
+    "eqeqeq": [2, "smart"],
+    "no-alert": 2,
+    "no-console": 1,
+    "no-else-return": 2,
+    "no-empty-function": 1,
+    "no-eq-null": 2,
+    "no-eval": 2,
+    "no-extend-native": [
+      2,
+      {
+        "exceptions": ["Object"]
+      }
+    ],
+    "no-extra-bind": 2,
+    "no-extra-label": 2,
+    "no-fallthrough": 2,
+    "no-floating-decimal": 2,
+    "no-implied-eval": 2,
+    "no-labels": 2,
+    "no-lone-blocks": 2,
+    "no-loop-func": 2,
+    "no-multi-spaces": 2,
+    "no-shadow-restricted-names": 2,
+    "max-params": [
+      2,
+      {
+        "max": 4
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": 1,
+    "prefer-const": 2,
+    "one-var": [
+      2,
+      {
+        "let": "never",
+        "const": "never"
+      }
+    ],
+    "no-use-before-define": "off",
+    "camelcase": [
+      "error",
+      {
+        "ignoreDestructuring": true,
+        "properties": "never",
+        "allow": ["lang_id"]
+      }
+    ],
+    "no-constant-condition": ["error", { "checkLoops": false }],
+    "react/prop-types": 0,
+    "react/jsx-handler-names": [
+      2,
+      {
+        "checkLocalVariables": true,
+        /**
+         * on - для методов из props
+         * handle - для локальных методов
+         */
+        "eventHandlerPrefix": "on|handle"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "object",
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+
+        "pathGroups": [
+          { "pattern": "@navigation/*", "group": "external" },
+
+          { "pattern": "@api/**", "group": "internal", "position": "after" },
+
+          {
+            "pattern": "@services/**",
+            "group": "internal",
+            "position": "after"
+          },
+
+          { "pattern": "@hooks/**", "group": "internal", "position": "after" },
+
+          {
+            "pattern": "@components/**",
+            "group": "internal",
+            "position": "after"
+          },
+
+          {
+            "pattern": "@modules/**",
+            "group": "internal",
+            "position": "after"
+          },
+
+          {
+            "pattern": "@shared/**",
+            "group": "internal",
+            "position": "after"
+          },
+
+          {
+            "pattern": "../**",
+            "group": "sibling",
+            "position": "before"
+          },
+
+          {
+            "pattern": "*.props",
+            "group": "index",
+            "position": "before"
+          },
+
+          {
+            "pattern": "@svg/**",
+            "patternOptions": { "matchBase": true },
+            "group": "index",
+            "position": "after"
+          },
+
+          {
+            "pattern": "@png/**",
+            "patternOptions": { "matchBase": true },
+            "group": "index",
+            "position": "after"
+          },
+
+          {
+            "pattern": "{*.scss, *.css}",
+            "patternOptions": { "matchBase": true },
+            "group": "index",
+            "position": "after"
+          }
+        ],
+
+        "newlines-between": "always-and-inside-groups",
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

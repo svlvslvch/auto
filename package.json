@@ -1,0 +1,48 @@
+{
+  "name": "auto",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build-and-start": "next build && next start",
+    "start": "npm run build-and-start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.12.0",
+    "@mantine/form": "^7.12.0",
+    "@tanstack/react-query": "^5.51.23",
+    "axios": "^1.7.7",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+    "next": "14.2.5",
+    "next-intl": "^3.17.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-infinite-scroll-component": "^6.1.0",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/js-cookie": "^3.0.6",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "6.4.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

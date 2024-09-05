@@ -1,0 +1,35 @@
+{
+  "ErrorPage": {
+    "Something went wrong!": "Что-то пошло не так!",
+    "Support": "Поддержка",
+    "To try again": "Попробовать ещё раз"
+  },
+  "Navigation": {
+    "Add a car": "Добавить авто",
+    "Log out": "Выйти"
+  },
+  "AuthPage": {
+    "Login to account": "Вход в аккаунт",
+    "Login": "Логин",
+    "Password": "Пароль",
+    "Log in": "Войти",
+    "Profile not found": "Профиль не найден.",
+    "Incorrect password Please try again": "Неверный пароль. Попробуйте ещё раз."
+  },
+  "Cars": {
+    "By relevance": "По актуальности",
+    "Ascending price": "По возрастанию цены",
+    "Descending price": "По убыванию цены",
+    "By year: newer": "По году: новее",
+    "By year: older": "По году: старше",
+    "Sorry, there are no matches": "К сожалению совпадений нет"
+  },
+  "Car": {
+    "Year": "Год выпуска",
+    "Color": "Цвет",
+    "Engine": "Двигатель",
+    "Power reserve": "Запас хода",
+    "Transmission": "Коробка",
+    "Sorry, the car was not found": "К сожалению автомобиль не найден"
+  }
+}
