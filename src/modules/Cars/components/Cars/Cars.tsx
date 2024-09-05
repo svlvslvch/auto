@@ -14,8 +14,6 @@ import { useCarsBrands } from '@hooks/cars/useCarsBrands';
 import Car from '../Car/Car';
 
 import { ICarsProps } from './Cars.props';
-import reduce from 'lodash/reduce';
-import { ICar } from '@shared/types/cars/cars.types';
 
 const Cars: FC<ICarsProps> = (props) => {
   const { searchParams } = props;
@@ -31,20 +29,11 @@ const Cars: FC<ICarsProps> = (props) => {
   const [brand, setBrand] = useState(searchBrand);
   const [sort, setSort] = useState(searchSort);
 
-  const { data, fetchNextPage, hasNextPage, status } = useCars({
+  const { cars, fetchNextPage, hasNextPage, status } = useCars({
     brand,
     color,
     sort,
   });
-
-  const cars: ICar[] = reduce(
-    data?.pages,
-    (acc: ICar[], page) => {
-      return [...acc, ...page.data];
-    },
-    []
-  );
-
 
   const { colors } = useCarsColors();
   const { brands } = useCarsBrands();
@@ -71,7 +60,7 @@ const Cars: FC<ICarsProps> = (props) => {
 
   return (
     <>
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2 md:flex-row">
         <MultiSelect
           className="w-full md:w-56"
           classNames={{
@@ -111,7 +100,7 @@ const Cars: FC<ICarsProps> = (props) => {
 
       <Select
         allowDeselect={false}
-        className="mt-2 w-fit"
+        className="mt-2 md:w-56"
         defaultValue={sort}
         data={[
           { label: t('By relevance'), value: 'fresh-relevance' },

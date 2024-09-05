@@ -2,7 +2,8 @@
 
 import { FC } from 'react';
 import Image from 'next/image';
-import { Link } from '@navigation/*';
+import { Link, usePathname } from '@navigation/*';
+import { useTranslations } from 'next-intl';
 
 import { useAuthorizedUser } from '@hooks/user/useAuthorizedUser';
 
@@ -15,7 +16,10 @@ import Exit from '@svg/common/exit.svg';
 import MainLogo from '@png/main_logo.png';
 
 const MainHeader: FC = () => {
+  const t = useTranslations('Navigation');
   const { user } = useAuthorizedUser();
+
+  const pathname = usePathname();
 
   return (
     <header className="h-headerHeight bg-white">
@@ -31,6 +35,19 @@ const MainHeader: FC = () => {
                 priority
               />
             </Link>
+          </li>
+
+          <li>
+            <div className="flex h-full items-center gap-8">
+              <Link
+                className={`flex h-full items-center border-b-2 ${pathname === '/cars' ? 'border-sky-300' : 'border-transparent'}`}
+                href="/cars"
+              >
+                <div className="text-center align-middle text-xs font-semibold uppercase">
+                  {t('Catalog')}
+                </div>
+              </Link>
+            </div>
           </li>
 
           {user ? (

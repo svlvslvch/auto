@@ -24,7 +24,15 @@ export const useCars = (params: IGetCarsParams) => {
       },
     });
 
-  return { data, fetchNextPage, hasNextPage, isLoading, status, refetch };
+  const cars: ICar[] = reduce(
+    data?.pages,
+    (acc: ICar[], page) => {
+      return [...acc, ...page.data];
+    },
+    []
+  );
+
+  return { cars, fetchNextPage, hasNextPage, isLoading, status, refetch };
 };
 
 export const useCar = (id: number) => {
