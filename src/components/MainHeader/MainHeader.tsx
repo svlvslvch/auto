@@ -37,18 +37,17 @@ const MainHeader: FC = () => {
             </Link>
           </li>
 
-          <li>
-            <div className="flex h-full items-center gap-8">
-              <Link
-                className={`flex h-full items-center border-b-2 ${pathname === '/cars' ? 'border-sky-300' : 'border-transparent'}`}
-                href="/cars"
-              >
-                <div className="text-center align-middle text-xs font-semibold uppercase">
-                  {t('Catalog')}
-                </div>
-              </Link>
-            </div>
-          </li>
+          {pathname !== '/cars' && (
+            <li>
+              <div className="flex h-full items-center gap-8">
+                <Link className="flex h-full items-center" href="/cars">
+                  <div className="text-center hover:text-violet-600 align-middle text-xs font-semibold uppercase">
+                    {t('Catalog')}
+                  </div>
+                </Link>
+              </div>
+            </li>
+          )}
 
           {user ? (
             <Navigation user={user} />
