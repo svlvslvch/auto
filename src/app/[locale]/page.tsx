@@ -1,3 +1,5 @@
+'use client';
+
 import { NextPage } from 'next';
 import { Link } from '@navigation/*';
 import { Button } from '@mantine/core';
@@ -5,7 +7,7 @@ import { Button } from '@mantine/core';
 import MainContainer from '@components/MainContainer/MainContainer';
 import CenterPageWrapper from '@components/Wrappers/CenterPageWrapper/CenterPageWrapper';
 
-const AuthPage: NextPage = () => {
+const MainPage: NextPage = () => {
   return (
     <MainContainer isLimitedHeight={true}>
       <CenterPageWrapper>
@@ -21,4 +23,4 @@ const AuthPage: NextPage = () => {
   );
 };
 
-export default AuthPage;
+export default MainPage;
